@@ -769,7 +769,7 @@
 
       /* OS NOIVOS - SCROLL 5 */
    #os-noivos {
-  background: #cdba93 !important;
+  background: var(--dourado) !important;
 }
 
       .container-noivos {
@@ -2202,7 +2202,7 @@ textarea {
 
 .icone-pulsante i {
   font-size: 3.5rem;
-  color: var(--verde-oliva);
+  color: var(--dourado-claro);
   /* REMOVER o background e o padding e o border-radius */
 }
 
@@ -2323,7 +2323,7 @@ textarea {
 
 .icone-presente-pulsante i {
   font-size: 3.5rem;
-  color: var(--verde-oliva);
+  color: var(--dourado-claro);
   animation: pulsarPresente 1.2s infinite ease-in-out;
   display: inline-block;
 }
@@ -2480,7 +2480,7 @@ body {
       <div class="capa-conteudo">
        <h1>Jéssica</h1>
 <div class="separador-nomes">&</div>
-<h1>Abdul</h1>
+<h1>Azis</h1>
         <p class="data">5 de Setembro de 2026</p>
         <button id="btnAbrirConvite">Abrir Convite</button>
       </div>
@@ -2527,7 +2527,7 @@ body {
             <p>Ouça a música do nosso amor</p>
             <button id="btnTocarMusica">Tocar música</button>
             <audio id="musicaFundo" loop>
-              <source src="Ed Sheeran - I Found Love.mp3" type="audio/mpeg" />
+              <source src="ifoundlove.mp3" type="audio/mpeg" />
               Seu navegador não suporta o elemento de áudio.
             </audio>
           </div>
@@ -2568,7 +2568,7 @@ body {
 <div class="linha-pais"></div>
 <p class="pais-preto">
   <strong>Filha de:</strong><br />
-  Joaninha Cândido Mathe e Mário André Matavele (em memória)
+  Mário André Matavele (em memória) e  Joaninha Cândido Mathe e
 </p>
             </div>
 
@@ -2663,28 +2663,7 @@ body {
         <div class="conteudo-secao">
           <h2>Nosso Dia Especial</h2>
           <div class="timeline-elegante">
-            <div class="evento-elegante">
-              <div class="circulo-tempo"></div>
-              <div class="icone-evento-elegante">
-                <i class="fas fa-church"></i>
-              </div>
-              <div class="info-evento-elegante">
-                <div class="hora-evento-elegante">9h</div>
-                <div class="titulo-evento-elegante">Cerimónia Religiosa</div>
-                <div class="local-evento-elegante">Igreja Nossa Senhora Rainha da Paz da Polana Caniço</div>
-                <button
-                  class="btn-mapa-elegante"
-                  onclick="
-                    window.open(
-                      'https://maps.app.goo.gl/kTJLE5muJFowSSnG6?g_st=ipc',
-                      '_blank',
-                    )
-                  "
-                >
-                  <i class="fas fa-map-marker-alt"></i> Ver no mapa
-                </button>
-              </div>
-            </div>
+            
 
             <div class="evento-elegante">
               <div class="circulo-tempo"></div>
@@ -2763,11 +2742,13 @@ body {
         </div>
       </section>
 
-      <!-- GALERIA - SCROLL 8 -->
+  <!-- GALERIA - SCROLL 8 -->
 <section id="galeria" class="secao">
   <div class="conteudo-secao">
     <h2>Nossos Momentos</h2>
     <div class="galeria-container-elegante">
+      
+      <!-- FOTOS EXISTENTES (MANTÉM) -->
       <div class="galeria-item-elegante" onclick="abrirModal(0)" style="--item-index: 0">
         <img src="Casal.jpeg" alt="Abdul Aziz e Jéssica" class="galeria-img-elegante" />
         <div class="galeria-overlay">
@@ -2789,10 +2770,38 @@ body {
         </div>
       </div>
       
+      <!-- NOVAS FOTOS (ADICIONAR) -->
+      <div class="galeria-item-elegante" onclick="abrirModal(3)" style="--item-index: 3">
+        <img src="Foto3.jpeg" alt="Abdul Aziz e Jéssica" class="galeria-img-elegante" />
+        <div class="galeria-overlay">
+          <i class="fas fa-search-plus"></i>
+        </div>
+      </div>
+      
+      <div class="galeria-item-elegante" onclick="abrirModal(4)" style="--item-index: 4">
+        <img src="Foto4.jpeg" alt="Abdul Aziz e Jéssica" class="galeria-img-elegante" />
+        <div class="galeria-overlay">
+          <i class="fas fa-search-plus"></i>
+        </div>
+      </div>
+      
+      <div class="galeria-item-elegante" onclick="abrirModal(5)" style="--item-index: 5">
+        <img src="Foto5.jpeg" alt="Abdul Aziz e Jéssica" class="galeria-img-elegante" />
+        <div class="galeria-overlay">
+          <i class="fas fa-search-plus"></i>
+        </div>
+      </div>
+      
+      <div class="galeria-item-elegante" onclick="abrirModal(6)" style="--item-index: 6">
+        <img src="Foto6.jpeg" alt="Abdul Aziz e Jéssica" class="galeria-img-elegante" />
+        <div class="galeria-overlay">
+          <i class="fas fa-search-plus"></i>
+        </div>
+      </div>
+      
     </div>
   </div>
 </section>
- 
      
 <!-- RSVP - SCROLL 9 -->
 <section id="rsvp" class="secao">
@@ -2800,7 +2809,7 @@ body {
     <h2>Confirmação de Presença</h2>
     <div class="rsvp-container-elegante">
       <p style="font-size: 1.3rem; color: var(--cinza-medio); margin-bottom: 20px;">
-        Por favor, confirme sua presença até 30 de Agosto de 2026
+        Por favor, confirme sua presença até 1 de Agosto de 2026
       </p>
       
       <!-- FORMULÁRIO DE CONFIRMAÇÃO -->
@@ -3504,10 +3513,14 @@ document.getElementById("btnConfirmarPresenca")?.addEventListener("click", funct
 
   // ========== GALERIA DE FOTOS ==========
   const imagensGaleria = [
-    "Casal.jpeg",
-    "Foto1.jpeg",
-    "Capa.jpeg"
-  ];
+  "Casal.jpeg",
+  "Foto1.jpeg",
+  "Capa.jpeg",
+  "Foto3.jpeg",
+  "Foto4.jpeg",
+  "Foto5.jpeg",
+  "Foto6.jpeg"
+];
 
   function abrirModal(indice) {
     const modal = document.getElementById("modalGaleria");
