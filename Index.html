@@ -2962,7 +2962,6 @@ document.getElementById("btnConfirmarPresenca")?.addEventListener("click", funct
   const nome = document.getElementById("nomeConfirmacao").value.trim();
   const presenca = document.querySelector('input[name="presenca"]:checked')?.value || "";
   const acompanhantes = document.getElementById("acompanhantes").value;
-  const mensagemExtra = document.getElementById("mensagemExtra").value.trim();
   
   if (!nome) {
     alert("Por favor, digite seu nome completo!");
@@ -2970,20 +2969,13 @@ document.getElementById("btnConfirmarPresenca")?.addEventListener("click", funct
   }
   
   // Número do WhatsApp para onde vai a mensagem
-  const numeroWhatsApp = "258846943689";
+  const numeroWhatsApp = "258843998900";
   
-  // Construir mensagem
-  let textoMensagem = `*CONFIRMAÇÃO DE PRESENÇA - CASAMENTO LUÍS & IVONE*%0A%0A`;
-  textoMensagem += `*Nome:* ${nome}%0A`;
-  textoMensagem += `*Presença:* ${presenca}%0A`;
-  textoMensagem += `*Acompanhantes:* ${acompanhantes}%0A`;
-  if (mensagemExtra) {
-    textoMensagem += `*Mensagem:* ${mensagemExtra}%0A`;
-  }
-  textoMensagem += `%0A*Data do evento:* 26 de Setembro de 2026`;
+  // Construir mensagem completa primeiro, depois codificar tudo de uma vez
+  const textoCompleto = `*CONFIRMAÇÃO DE PRESENÇA - JÚLIA & MOISÉS*\n\n*Nome:* ${nome}\n*Presença:* ${presenca}\n*Acompanhantes:* ${acompanhantes}\n\n*Data do evento:* 12 de Setembro de 2026`;
   
   // Abrir WhatsApp
-  const url = `https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`;
+  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoCompleto)}`;
   window.open(url, '_blank');
 });
 
